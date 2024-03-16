@@ -57,6 +57,7 @@ public class HomeFragment extends BaseFragment implements VodPresenter.OnClickLi
     private ArrayObjectAdapter mHistoryAdapter;
     public HistoryPresenter mPresenter;
     private ArrayObjectAdapter mAdapter;
+    public boolean init;
     private int homeUI;
     private String button;
 
@@ -71,9 +72,11 @@ public class HomeFragment extends BaseFragment implements VodPresenter.OnClickLi
 
     @Override
     protected void initView() {
+        mBinding.progressLayout.showProgress();
         setRecyclerView();
         setAdapter();
         initEvent();
+        init = true;
     }
 
     @Override
@@ -271,6 +274,14 @@ public class HomeFragment extends BaseFragment implements VodPresenter.OnClickLi
     public void onResume() {
         super.onResume();
         refreshFuncRow();
+    }
+
+    public boolean canBack() {
+        return mBinding.recycler.getSelectedPosition() != 0;
+    }
+
+    public void goBack() {
+        mBinding.recycler.scrollToPosition(0);
     }
 
 }
