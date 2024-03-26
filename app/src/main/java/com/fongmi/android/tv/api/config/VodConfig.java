@@ -138,7 +138,7 @@ public class VodConfig {
             if (TextUtils.isEmpty(url)) {
                 url = "https://atomgit.com/lintech/tms/raw/master/source/stable/main.json";
                 // 添加以下代码，解决内置源时，投屏播放问题，给定一个配置，写入本地数据库，标记一个name（名字“源已内置”可以随便取，但一定要有，type为0,表示点播）
-                Config.find(url, 0).name("插兜的时光机，关注「码上放生」").update();
+                Config.find(url, 0).name("关注「插兜的干货仓库」").update();
             }
             checkJson(Json.parse(Decoder.getJson(url)).getAsJsonObject(), callback);
         } catch (Throwable e) {
