@@ -1667,6 +1667,7 @@ public class VideoActivity extends BaseActivity implements CustomKeyDownVod.List
 
     @Override
     public void onKeyDown() {
+        showInfo();
         showControl(getFocus2());
     }
 
