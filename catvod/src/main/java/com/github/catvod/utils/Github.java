@@ -22,6 +22,10 @@ public class Github {
         return getUrl("update/kitkat", name);
     }
 
+    public static String getCrosswalk() {
+        return getUrl("crosswalk", "XWalkRuntimeLib.apk");
+    }
+
     public static String getSo(String url) {
         try {
             File file = new File(Path.so(), Uri.parse(url).getLastPathSegment());
